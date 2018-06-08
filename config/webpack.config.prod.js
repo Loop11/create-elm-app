@@ -144,19 +144,12 @@ module.exports = {
           // application, so you could serve static assets outside of the
           // module system.
           {
-            loader: require.resolve('regex-replace-loader'),
-            options: {
-              regex: /^if \(typeof define === "function" && define\['amd']\)(.*\n){11}/,
-              value: '123abc',
-              flags: 'gm'
-            }
-          },
-          {
             loader: require.resolve('string-replace-loader'),
             query: {
-              search: '%PUBLIC_URL%',
-              replace: publicUrl,
-              flags: 'g'
+              multiple: [
+                {search: '%PUBLIC_URL%', replace: publicUrl, flags: 'g'},
+                {search: /^if \(typeof define === "function" && define\['amd']\)(.*\n){11}/, replace: '123abc', flags: 'gm'},
+              ]
             }
           },
           {
