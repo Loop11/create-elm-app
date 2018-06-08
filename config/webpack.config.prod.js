@@ -148,7 +148,7 @@ module.exports = {
             options: {
               multiple: [
                 { search: '%PUBLIC_URL%', replace: publicUrl, flags: 'g' },
-                { search: "define", replace: "123abc", flags: 'g' }
+                { search: UMD, replace: "123abc", flags: 'g' }
               ]
             }
           },
