@@ -152,6 +152,14 @@ module.exports = {
             }
           },
           {
+            loader: require.resolve('string-replace-loader'),
+            query: {
+              search: UMD,
+              replace: "123abc",
+              flags: 'g'
+            }
+          },
+          {
             // Use the local installation of elm-make
             loader: require.resolve('elm-webpack-loader'),
             options: {
@@ -159,14 +167,6 @@ module.exports = {
               // for invalid values, "false" and as a default, disable it
               debug: process.env.ELM_DEBUGGER === 'true' ? true : false,
               pathToMake: paths.elmMake
-            }
-          },
-          {
-            loader: require.resolve('string-replace-loader'),
-            query: {
-              search: "define",
-              replace: "123abc",
-              flags: 'g'
             }
           }
         ]
