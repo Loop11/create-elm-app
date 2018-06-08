@@ -145,18 +145,11 @@ module.exports = {
           // module system.
           {
             loader: require.resolve('string-replace-loader'),
-            query: {
-              search: '%PUBLIC_URL%',
-              replace: publicUrl,
-              flags: 'g'
-            }
-          },
-          {
-            loader: require.resolve('string-replace-loader'),
-            query: {
-              search: UMD,
-              replace: "123abc",
-              flags: 'g'
+            options: {
+              multiple: [
+                { search: '%PUBLIC_URL%', replace: publicUrl, flags: 'g' },
+                { search: "define", replace: "123abc", flags: 'g' }
+              ]
             }
           },
           {
