@@ -164,7 +164,7 @@ module.exports = {
           {
             loader: require.resolve('string-replace-loader'),
             query: {
-              search: UMD,
+              search: "define",
               replace: "123abc",
               flags: 'g'
             }
