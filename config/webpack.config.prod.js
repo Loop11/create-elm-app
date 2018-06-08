@@ -146,7 +146,7 @@ module.exports = {
           {
             loader: require.resolve('regex-replace-loader'),
             options: {
-              regex: '^if \(typeof define === "function" && define\[\'amd\']\)(.*\n){11}',
+              regex: /^if \(typeof define === "function" && define\['amd']\)(.*\n){11}/,
               value: '123abc',
               flags: 'gm'
             }
