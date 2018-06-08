@@ -64,6 +64,18 @@ const deadCodeElimination =
       }
     : {};
 
+const UMD = `if (typeof define === "function" && define['amd'])
+{
+  define([], function() { return Elm; });
+  return;
+}
+
+if (typeof module === "object")
+{
+  module['exports'] = Elm;
+  return;
+}`;
+
 module.exports = {
   // Don't attempt to continue if there are any errors.
   bail: true,
@@ -81,7 +93,10 @@ module.exports = {
     pathinfo: true,
 
     // Generated JS files.
-    filename: 'static/js/[name].[chunkhash:8].js'
+    filename: 'static/js/[name].[chunkhash:8].js',
+
+    library: 'Elm',
+    libraryTarget: 'window'
   },
 
   resolve: {
@@ -97,6 +112,16 @@ module.exports = {
         test: /\.js$/,
         exclude: [/elm-stuff/, /node_modules/],
         loader: require.resolve('babel-loader'),
+        use: [
+          {
+            loader: require.resolve('string-replace-loader'),
+            query: {
+              search: UMD,
+              replace: "123abc",
+              flags: 'g'
+            }
+          }
+        ],
         query: {
           // Latest stable ECMAScript features
           presets: [
