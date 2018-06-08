@@ -64,17 +64,7 @@ const deadCodeElimination =
       }
     : {};
 
-const UMD = `if (typeof define === "function" && define['amd'])
-{
-  define([], function() { return Elm; });
-  return;
-}
-
-if (typeof module === "object")
-{
-  module['exports'] = Elm;
-  return;
-}`;
+const UMD = `if (typeof define === "function" && define['amd'])`;
 
 module.exports = {
   // Don't attempt to continue if there are any errors.
