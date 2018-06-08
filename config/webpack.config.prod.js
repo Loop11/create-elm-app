@@ -101,50 +101,38 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: [/elm-stuff/, /node_modules/],
-        use: [
-          {
-            loader: require.resolve('string-replace-loader'),
-            query: {
-              search: UMD,
-              replace: "123abc",
-              flags: 'g'
-            }
-          },
-          {
-            loader: require.resolve('babel-loader'),
-            query: {
-              // Latest stable ECMAScript features
-              presets: [
-                [
-                  require.resolve('babel-preset-env'),
-                  {
-                    targets: {
-                      // React parses on ie 9, so we should too
-                      ie: 9,
-                      // We currently minify with uglify
-                      // Remove after https://github.com/mishoo/UglifyJS2/issues/448
-                      uglify: false
-                    },
-                    // Disable polyfill transforms
-                    useBuiltIns: false,
-                    // Do not transform modules to CJS
-                    modules: false
-                  }
-                ]
-              ],
-              plugins: [
-                [
-                  require.resolve('babel-plugin-transform-runtime'),
-                  {
-                    helpers: false,
-                    polyfill: false,
-                    regenerator: true
-                  }
-                ]
-              ]
-            }
-          }
-        ],
+        loader: require.resolve('babel-loader'),
+        query: {
+          // Latest stable ECMAScript features
+          presets: [
+            [
+              require.resolve('babel-preset-env'),
+              {
+                targets: {
+                  // React parses on ie 9, so we should too
+                  ie: 9,
+                  // We currently minify with uglify
+                  // Remove after https://github.com/mishoo/UglifyJS2/issues/448
+                  uglify: false
+                },
+                // Disable polyfill transforms
+                useBuiltIns: false,
+                // Do not transform modules to CJS
+                modules: false
+              }
+            ]
+          ],
+          plugins: [
+            [
+              require.resolve('babel-plugin-transform-runtime'),
+              {
+                helpers: false,
+                polyfill: false,
+                regenerator: true
+              }
+            ]
+          ]
+        }
       },
 
       {
@@ -171,6 +159,14 @@ module.exports = {
               // for invalid values, "false" and as a default, disable it
               debug: process.env.ELM_DEBUGGER === 'true' ? true : false,
               pathToMake: paths.elmMake
+            }
+          },
+          {
+            loader: require.resolve('string-replace-loader'),
+            query: {
+              search: UMD,
+              replace: "123abc",
+              flags: 'g'
             }
           }
         ]
