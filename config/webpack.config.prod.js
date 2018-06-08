@@ -153,7 +153,7 @@ module.exports = {
                   flags: 'g'
                 },
                 {
-                  search: /^if \(typeof define === "function" && define\['amd']\)(.*\n){11}/,
+                  search: /^if \(typeof define === "function" && define\['amd']\)(.*\n){6}/,
                   replace: '',
                   flags: 'gm'
                 },
