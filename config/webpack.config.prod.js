@@ -147,8 +147,16 @@ module.exports = {
             loader: require.resolve('string-replace-loader'),
             query: {
               multiple: [
-                {search: '%PUBLIC_URL%', replace: publicUrl, flags: 'g'},
-                {search: /^if \(typeof define === "function" && define\['amd']\)(.*\n){11}/, replace: '123abc', flags: 'gm'},
+                {
+                  search: '%PUBLIC_URL%',
+                  replace: publicUrl,
+                  flags: 'g'
+                },
+                {
+                  search: /^if \(typeof define === "function" && define\['amd']\)(.*\n){11}/,
+                  replace: '',
+                  flags: 'gm'
+                },
               ]
             }
           },
