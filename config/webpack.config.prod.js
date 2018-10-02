@@ -96,19 +96,19 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: [/elm-stuff/, /node_modules/],
-        loader: require.resolve('babel-loader'),
+        loader: require.resolve("babel-loader"),
         query: {
           // Latest stable ECMAScript features
           presets: [
             [
-              require.resolve('babel-preset-env'),
+              require.resolve("babel-preset-env"),
               {
                 targets: {
                   // React parses on ie 9, so we should too
                   ie: 9,
                   // We currently minify with uglify
                   // Remove after https://github.com/mishoo/UglifyJS2/issues/448
-                  uglify: true
+                  uglify: false
                 },
                 // Disable polyfill transforms
                 useBuiltIns: false,
