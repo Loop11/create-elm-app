@@ -122,7 +122,7 @@ module.exports = {
               require.resolve('babel-plugin-transform-runtime'),
               {
                 helpers: false,
-                polyfill: false,
+                polyfill: process.env.BABEL_TRANSFORM_RUNTIME_POLYFILL === 'true' ? true : false,
                 regenerator: true
               }
             ]
@@ -141,9 +141,19 @@ module.exports = {
           {
             loader: require.resolve('string-replace-loader'),
             query: {
-              search: '%PUBLIC_URL%',
-              replace: publicUrl,
-              flags: 'g'
+              multiple: [
+                {
+                  search: '%PUBLIC_URL%',
+                  replace: publicUrl,
+                  flags: 'g'
+                },
+                // remove AMD registration from elm-make output https://github.com/elm-lang/elm-make/blob/2cf040aa801d195fc6db52a5cdb7f5da0ae42c5e/src/Pipeline/Generate.hs#L264
+                {
+                  search: /^if \(typeof define === "function" && define\['amd']\)(.*\n){6}/,
+                  replace: '',
+                  flags: 'gm'
+                }
+              ]
             }
           },
           {
