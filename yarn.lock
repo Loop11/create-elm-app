@@ -2276,6 +2276,14 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+cross-spawn@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-4.0.0.tgz#8254774ab4786b8c5b3cf4dfba66ce563932c252"
+  integrity sha512-dAZV+Hv1PRxSUrJd9Hk9MS4gL5eEafKhrmsRlod5oHg8aP3A2FsXkga4ihfMFxlEgmMa+LS84jPKFdhk5wZwuw==
+  dependencies:
+    lru-cache "^4.0.1"
+    which "^1.2.9"
+
 cross-spawn@5.1.0, cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -2285,7 +2293,7 @@ cross-spawn@5.1.0, cross-spawn@^5.0.1, cross-spawn@^5.1.0:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-cross-spawn@6.0.5, cross-spawn@^6.0.0, cross-spawn@^6.0.4:
+cross-spawn@^6.0.0, cross-spawn@^6.0.4:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
   integrity sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==
@@ -2886,23 +2894,14 @@ elm-hot-loader@0.5.4:
   dependencies:
     loader-utils "^0.2.12"
 
-elm-webpack-loader@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/elm-webpack-loader/-/elm-webpack-loader-5.0.0.tgz#bcbd3334f232f61412390f7a9373264068cf7aa2"
-  integrity sha512-d1a06wvnQzXsAAakkI+lB2uQ9m3BREAqRFk/foxdznQ2Ge29ygkBUGQZ3spNwOy8hLo55ULKd9n1eifW9HJ5ag==
+"elm-webpack-loader@https://github.com/Loop11/elm-webpack-loader.git":
+  version "4.5.0"
+  resolved "https://github.com/Loop11/elm-webpack-loader.git#e5931022bfa69c11b926ffe561a90fab968b528a"
   dependencies:
-    elm "^0.19.0"
     glob "^7.1.1"
     loader-utils "^1.0.2"
-    node-elm-compiler "^5.0.0"
+    node-elm-compiler "^4.5.0"
     yargs "^6.5.0"
-
-elm@^0.19.0:
-  version "0.19.1"
-  resolved "https://registry.yarnpkg.com/elm/-/elm-0.19.1.tgz#66461c49146099b866fdaf8af681331e5bec703d"
-  integrity sha512-rehOtJKZvoYDddlrd7AX5NAf0H+LUllnBg3AHaeaIOKWzw4W316d7Bkhlbo7aSG+hVUVWP2ihKwyYkDi589TfA==
-  dependencies:
-    request "^2.88.0"
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -3652,13 +3651,13 @@ find-cache-dir@^1.0.0:
     make-dir "^1.0.0"
     pkg-dir "^2.0.0"
 
-find-elm-dependencies@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/find-elm-dependencies/-/find-elm-dependencies-2.0.4.tgz#0a327fc8c0c0297b54115efbf0a9d6de474cfc89"
-  integrity sha512-x/4w4fVmlD2X4PD9oQ+yh9EyaQef6OtEULdMGBTuWx0Nkppvo2Z/bAiQioW2n+GdRYKypME2b9OmYTw5tw5qDg==
+find-elm-dependencies@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/find-elm-dependencies/-/find-elm-dependencies-1.0.2.tgz#737adc0ce34dfde0c3bf85f568658555329e4953"
+  integrity sha512-gnvu2zAKFEHd76zV/JkRvof7HNyM2X8yW5vflCfWbXeo9hmXMndz/SrEsTQFSXXgNqf0AdjhQSRPnG8JYR92oQ==
   dependencies:
-    firstline "^1.2.0"
-    lodash "^4.17.19"
+    firstline "1.2.0"
+    lodash "4.14.2"
 
 find-node-modules@1.0.4:
   version "1.0.4"
@@ -3706,10 +3705,10 @@ findup-sync@0.4.2:
     micromatch "^2.3.7"
     resolve-dir "^0.1.0"
 
-firstline@^1.2.0:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/firstline/-/firstline-1.3.1.tgz#59e84af0fd858fbc6dac0a0ff97fd22a47e58084"
-  integrity sha512-ycwgqtoxujz1dm0kjkBFOPQMESxB9uKc/PlD951dQDIG+tBXRpYZC2UmJb0gDxopQ1ZX6oyRQN3goRczYu7Deg==
+firstline@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/firstline/-/firstline-1.2.0.tgz#c9f4886e7f7fbf0afc12d71941dce06b192aea05"
+  integrity sha512-JBzSqQYZvZaD3aHRG1okOog1aZXuXCWHcf9BzkpHYIN9s9zQQCjFajawWxGzDco50p9wtg93A5qC90gnnfngKg==
 
 flat-cache@^1.2.1:
   version "1.3.4"
@@ -5474,6 +5473,11 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
+lodash@4.14.2:
+  version "4.14.2"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.14.2.tgz#bbccce6373a400fbfd0a8c67ca42f6d1ef416432"
+  integrity sha512-L5PieqD7phyya3Uave78zpkVE5uc022V1h5iAWt7q1z71SS7Rtw5OX8Q30OZ4L8GVtRLKxI1mn76X288L7EdeA==
+
 lodash@4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
@@ -5484,7 +5488,7 @@ lodash@4.17.5:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
   integrity sha512-svL3uiZf1RwhH+cWrfZn3A4+U58wbP0tGVTLQPbjplZxZ8ROD9VLuNgsRniTlLe7OlSqR79RUehXgpBW/s0IQw==
 
-lodash@^4, lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.2, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.3.0:
+lodash@^4, lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.2, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -6007,15 +6011,15 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
-node-elm-compiler@^5.0.0:
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/node-elm-compiler/-/node-elm-compiler-5.0.6.tgz#d4a6e6c9d9a26dba4211ccd2aeae7d5e34057f0c"
-  integrity sha512-DWTRQR8b54rvschcZRREdsz7K84lnS8A6YJu8du3QLQ8f204SJbyTaA6NzYYbfUG97OTRKRv/0KZl82cTfpLhA==
+node-elm-compiler@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/node-elm-compiler/-/node-elm-compiler-4.5.0.tgz#3029f053cfbfc68730e75a54f93495cc58bf7ceb"
+  integrity sha512-XlyiHxqBizqEHaYj4UaO5/qmxeh1Ir/M02RLKsIgHBR7Z8snwoXfdpVntlfF64mcAGkuA1KY0CJsqk0IpAfyLQ==
   dependencies:
-    cross-spawn "6.0.5"
-    find-elm-dependencies "^2.0.4"
-    lodash "^4.17.19"
-    temp "^0.9.0"
+    cross-spawn "4.0.0"
+    find-elm-dependencies "1.0.2"
+    lodash "4.14.2"
+    temp "^0.8.3"
 
 node-emoji@^1.4.1:
   version "1.11.0"
@@ -7665,7 +7669,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@^2.45.0, request@^2.74.0, request@^2.88.0:
+request@^2.45.0, request@^2.74.0:
   version "2.88.2"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.2.tgz#d73c918731cb5a87da047e207234146f664d12b3"
   integrity sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
@@ -8665,12 +8669,11 @@ tapable@^0.2.7:
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-0.2.9.tgz#af2d8bbc9b04f74ee17af2b4d9048f807acd18a8"
   integrity sha512-2wsvQ+4GwBvLPLWsNfLCDYGsW6xb7aeC6utq2Qh0PFwgEy7K7dsma9Jsmb2zSQj7GvYAyUGSntLtsv++GmgL1A==
 
-temp@^0.9.0:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/temp/-/temp-0.9.4.tgz#cd20a8580cb63635d0e4e9d4bd989d44286e7620"
-  integrity sha512-yYrrsWnrXMcdsnu/7YMYAofM1ktpL5By7vZhf15CrXijWWrEYZks5AXBudalfSWJLlnen/QUJUB5aoB0kqZUGA==
+temp@^0.8.3:
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/temp/-/temp-0.8.4.tgz#8c97a33a4770072e0a05f919396c7665a7dd59f2"
+  integrity sha512-s0ZZzd0BzYv5tLSptZooSjK8oj6C+c19p7Vqta9+6NPOf7r+fxq0cJe6/oN4LTC79sy5NY8ucOJNgwsKCSbfqg==
   dependencies:
-    mkdirp "^0.5.1"
     rimraf "~2.6.2"
 
 term-size@^1.2.0:
